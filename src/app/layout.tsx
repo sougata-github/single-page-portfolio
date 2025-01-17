@@ -1,10 +1,11 @@
 import "./globals.css";
 
-import { Geist } from "next/font/google";
+import { Archivo } from "next/font/google";
 import type { Metadata } from "next";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const archivo = Archivo({
+  display: "swap",
+  weight: "variable",
   subsets: ["latin"],
 });
 
@@ -20,7 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.className}  antialiased`}>{children}</body>
+      <body
+        className={`${archivo.className} antialiased bg-stone-200 text-stone-900`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
