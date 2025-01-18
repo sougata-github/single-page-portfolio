@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Projects = () => {
   return (
-    <section className="py-24 md:py-32 lg:py-40">
+    <section className="section">
       <div className="container !max-w-full">
         <h2 className="text-4xl md:text-7xl">Selected Works</h2>
         <div className="mt-10 md:mt-16 lg:mt-20">

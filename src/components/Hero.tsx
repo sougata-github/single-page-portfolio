@@ -34,7 +34,7 @@ const Hero = () => {
               >
                 <span>View My Work</span>
               </Button>
-              <Button variant="text">Let&apos; Talk</Button>
+              <Button variant="text">Let&apos;s Talk</Button>
             </div>
           </div>
         </div>

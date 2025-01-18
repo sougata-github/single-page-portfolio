@@ -1,3 +1,4 @@
+import Testimonials from "@/components/Testimonials";
 import Projects from "@/components/Projects";
 import Header from "@/components/Header";
 import Intro from "@/components/Intro";
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero />
       <Intro />
       <Projects />
+      <Testimonials />
     </>
   );
 }
