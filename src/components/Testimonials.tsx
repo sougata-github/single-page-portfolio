@@ -5,7 +5,7 @@ const Testimonials = () => {
   const testimonialIndex = 0;
 
   return (
-    <section className="section overflow-x-clip">
+    <section className="section overflow-x-clip" id="testimonials">
       <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl flex flex-col">
         <span className="whitespace-nowrap">
           Some nice words from my past clients

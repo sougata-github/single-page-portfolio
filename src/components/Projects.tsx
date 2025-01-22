@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Projects = () => {
   return (
-    <section className="section">
+    <section className="section" id="projects">
       <div className="container !max-w-full">
         <h2 className="text-4xl md:text-7xl">Selected Works</h2>
         <div className="mt-10 md:mt-16 lg:mt-20">

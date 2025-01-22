@@ -2,11 +2,11 @@ import { faqs } from "@/constants";
 
 const FAQs = () => {
   return (
-    <section className="section">
+    <section className="section" id="faqs">
       <div className="container !max-w-full">
         <h2 className="text-4xl md:text-7xl lg:text-8xl">FAQs</h2>
         <div className="mt-10 md:mt-16 lg:mt-20">
-          {faqs.map(({ question, answer }) => (
+          {faqs.map(({ question }) => (
             <div
               key={question}
               className="border-t border-stone-400 border-dotted py-6 md:py-8 lg:py-10 last:border-b"
