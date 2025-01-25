@@ -158,11 +158,10 @@ const Hero = () => {
             }}
           >
             <Image
-              priority
               quality={100}
               src={heroImage}
               alt="My portrait"
-              className="size-full object-cover"
+              className="object-cover size-full"
             />
           </motion.div>
         </div>

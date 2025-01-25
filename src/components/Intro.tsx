@@ -1,45 +1,56 @@
 "use client";
 
-import { stagger, useAnimate, useInView } from "framer-motion";
-import { useEffect } from "react";
-import SplitType from "split-type";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const Intro = () => {
-  const [scope, animate] = useAnimate();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
-  const inView = useInView(scope, {
-    once: true,
-  });
+  const text =
+    "Building beautiful websites with clean code and thoughtful design to help your business grow and stand out online.";
 
-  useEffect(() => {
-    new SplitType(scope.current.querySelector("h2"), {
-      types: "lines,words",
-      tagName: "span",
-    });
-  }, [scope]);
+  const wordVariants = {
+    hidden: { opacity: 0, filter: "blur(10px)" },
+    visible: {
+      opacity: 1,
+      filter: "blur(0px)",
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
 
-  useEffect(() => {
-    if (inView) {
-      animate(
-        scope.current.querySelectorAll(".word"),
-        {
-          transform: "translateY(0%)",
-        },
-        {
-          duration: 0.5,
-          delay: stagger(0.2),
-        }
-      );
-    }
-  }, [animate, inView, scope]);
+  const containerVariants = {
+    visible: {
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
 
   return (
-    <section className="section mt-12 md:mt-16 lg:mt-20" id="intro" ref={scope}>
-      <div className="container max-md:!max-w-full">
-        <h2 className="text-4xl md:text-7xl lg:w-[80%] lg:text-8xl">
-          Building beautiful websites with clean code and thoughtful design to
-          help your business grow and stand out online.
-        </h2>
+    <section className="section mt-12 md:mt-14" id="intro">
+      <div className="container !max-w-full">
+        <motion.h2
+          ref={ref}
+          className="text-4xl md:text-7xl lg:text-6xl leading-tight"
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          variants={containerVariants}
+          aria-label={text}
+        >
+          {text.split(" ").map((word, index) => (
+            <motion.span
+              key={index}
+              className="inline-block mr-2"
+              variants={wordVariants}
+            >
+              {word}
+            </motion.span>
+          ))}
+        </motion.h2>
       </div>
     </section>
   );
