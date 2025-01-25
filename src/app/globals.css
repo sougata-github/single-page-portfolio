@@ -9,3 +9,12 @@
 .section {
   @apply py-24 md:py-32 lg:py-40;
 }
+
+.line {
+  @apply overflow-hidden;
+  line-height: 1.08;
+}
+
+.word {
+  @apply translate-y-full inline-block;
+}

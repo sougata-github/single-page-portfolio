@@ -66,7 +66,7 @@ const Header = () => {
   return (
     <header>
       <motion.div
-        className="fixed top-0 left-0 w-full bg-stone-900 h-0 overflow-hidden backdrop-blur-md"
+        className="z-40 fixed top-0 left-0 w-full bg-stone-900 h-0 overflow-hidden backdrop-blur-md"
         variants={mobileNavVariants}
         animate={isOpen ? "open" : "closed"}
       >
@@ -79,7 +79,7 @@ const Header = () => {
                   href={link.href}
                   className="flex items-center justify-between border-t border-stone-800 last:border-b py-8 group relative isolate"
                 >
-                  <span className="text-3xl group-hover:pl-4 transition-all">
+                  <span className="text-2xl md:text-3xl group-hover:pl-4 transition-all">
                     {link.label}
                   </span>
                   <ArrowUpRight className="size-5" />
@@ -91,7 +91,7 @@ const Header = () => {
         </nav>
       </motion.div>
 
-      <div className="fixed top-0 left-0 w-full mix-blend-difference backdrop-blur-md">
+      <div className="z-40 fixed top-0 left-0 w-full mix-blend-difference backdrop-blur-md">
         <div className="container !max-w-full">
           <div className="flex justify-between h-20 items-center">
             <div>
@@ -104,7 +104,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="fixed top-0 left-0 w-full">
+      <div className="z-40 fixed top-0 left-0 w-full">
         <div className="container !max-w-full">
           <div className="flex justify-end h-20 items-center">
             <div className="flex items-center gap-4">
