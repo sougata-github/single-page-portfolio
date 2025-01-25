@@ -146,7 +146,7 @@ const Hero = () => {
             }}
             initial={{
               opacity: 0,
-              filter: "blur(5px)",
+              filter: "blur(10px)",
             }}
             animate={{
               opacity: 1,
@@ -154,7 +154,7 @@ const Hero = () => {
             }}
             transition={{
               duration: 0.5,
-              delay: 1,
+              delay: 1.5,
             }}
           >
             <Image
