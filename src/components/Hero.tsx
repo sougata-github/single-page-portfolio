@@ -5,18 +5,13 @@ import Image from "next/image";
 
 import Button from "./Button";
 
-import {
-  motion,
-  stagger,
-  useAnimate,
-  useScroll,
-  useTransform,
-} from "framer-motion";
-import SplitType from "split-type";
+import { motion, useScroll, useTransform } from "framer-motion";
+
 import { useEffect, useRef } from "react";
+import { useTextReveal } from "@/hooks/useTextReveal";
 
 const Hero = () => {
-  const [titleScope, titleAnimate] = useAnimate();
+  const { scope, entranceAnimation } = useTextReveal();
 
   const scrollDiv = useRef<HTMLDivElement>(null);
 
@@ -28,21 +23,7 @@ const Hero = () => {
   const imageWidth = useTransform(scrollYProgress, [0, 1], ["100%", "240%"]);
 
   useEffect(() => {
-    new SplitType(titleScope.current, {
-      types: "lines,words",
-      tagName: "span",
-    });
-
-    titleAnimate(
-      titleScope.current.querySelectorAll(".word"),
-      {
-        transform: "translateY(0)",
-      },
-      {
-        duration: 0.5,
-        delay: stagger(0.2),
-      }
-    );
+    entranceAnimation();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -59,7 +40,7 @@ const Hero = () => {
               animate={{
                 opacity: 1,
               }}
-              ref={titleScope}
+              ref={scope}
             >
               Crafting digital experiences through code and creative design
             </motion.h1>
