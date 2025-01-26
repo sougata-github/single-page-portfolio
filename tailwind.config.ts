@@ -13,6 +13,14 @@ export default {
       lg: "1200px",
     },
     extend: {
+      keyframes: {
+        ping: {
+          "75%,100%": {
+            transform: "scale(1.5)",
+            opacity: "0",
+          },
+        },
+      },
       colors: {
         "red-orange": {
           500: "color-mix(in srgb, theme('colors.red.500') 50%, theme('colors.orange.500') 50%)",
